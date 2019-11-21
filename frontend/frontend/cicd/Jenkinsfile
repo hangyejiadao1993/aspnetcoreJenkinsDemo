@@ -1,12 +1,40 @@
 ﻿node{
-	stage('Git Checkout'){
-    	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'e8a02168-ae80-48ea-b3d0-2d225a3b91fb', url: 'https://github.com/hangyejiadao1993/aspnetcoreJenkinsDemo.git']]])
+	stage('git Checkout'){
+	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitlab', url: 'http://192.168.23.128:88/root/pipaspcore.git']]])
 	}
-	stage('Build'){ 
-	
+
+	stage('Build'){
+
+	try{
+	 sh '''
+		cd ./frontend/frontend
+		docker rmi frontend:latest 
+		'''
+	}
+	finally{
+	 
+	 sh '''
+		cd ./frontend/frontend
+		docker build -t frontend:latest .
+		docker login 192.168.23.128
+		docker tag frontend:latest 192.168.23.128/docker/frontend:v3
+		docker push 192.168.23.128/docker/frontend:v3 
+	 '''
+	  }
 	}
 	stage('Deploy'){
-	
-	
-	}  
+		try{
+		sh '''
+		cd ./frontend/frontend/deploy 
+		kubectl delete  -f deployment.yml
+	 	 
+		''' 
+		}finally{
+		sh '''
+		cd ./frontend/frontend/deploy  
+		ls
+		kubectl apply  -f deployment.yml 
+		''' 
+		} 
+	}
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lh\\Desktop\\aspnetcoreJenkinsDemo\\frontend\\frontend\\frontend.csproj": {}
+    "C:\\Users\\lh\\Desktop\\pipaspcore\\frontend\\frontend\\frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lh\\Desktop\\aspnetcoreJenkinsDemo\\frontend\\frontend\\frontend.csproj": {
+    "C:\\Users\\lh\\Desktop\\pipaspcore\\frontend\\frontend\\frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lh\\Desktop\\aspnetcoreJenkinsDemo\\frontend\\frontend\\frontend.csproj",
+        "projectUniqueName": "C:\\Users\\lh\\Desktop\\pipaspcore\\frontend\\frontend\\frontend.csproj",
         "projectName": "frontend",
-        "projectPath": "C:\\Users\\lh\\Desktop\\aspnetcoreJenkinsDemo\\frontend\\frontend\\frontend.csproj",
+        "projectPath": "C:\\Users\\lh\\Desktop\\pipaspcore\\frontend\\frontend\\frontend.csproj",
         "packagesPath": "C:\\Users\\lh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lh\\Desktop\\aspnetcoreJenkinsDemo\\frontend\\frontend\\obj\\",
+        "outputPath": "C:\\Users\\lh\\Desktop\\pipaspcore\\frontend\\frontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lh\\AppData\\Roaming\\NuGet\\NuGet.Config",

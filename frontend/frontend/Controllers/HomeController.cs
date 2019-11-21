@@ -14,17 +14,16 @@ namespace frontend.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MyAppDbContext context  ;
+
+
+        public HomeController(ILogger<HomeController> logger,MyAppDbContext _context)
         {
+            context = _context;
             _logger = logger;
         } 
 
-        private readonly MyAppDbContext context = null;
-
-        public HomeController(MyAppDbContext _contenxt)
-        {
-            this.context = _contenxt;
-        }
+       
         public IActionResult Index()
         {
             var customers = this.context.Customers.ToList();
