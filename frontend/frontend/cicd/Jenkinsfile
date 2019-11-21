@@ -1,0 +1,12 @@
+﻿node{
+	stage('Git Checkout'){
+    	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitlab', url: 'http://192.168.23.128:88/root/pipaspcore.git']]])
+	}
+	stage('Build'){ 
+	
+	}
+	stage('Deploy'){
+	
+	
+	}  
+}
