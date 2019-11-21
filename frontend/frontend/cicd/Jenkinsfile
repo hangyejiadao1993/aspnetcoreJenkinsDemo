@@ -1,6 +1,6 @@
 ﻿node{
 	stage('Git Checkout'){
-    	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitlab', url: 'http://192.168.23.128:88/root/pipaspcore.git']]])
+    	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'e8a02168-ae80-48ea-b3d0-2d225a3b91fb', url: 'https://github.com/hangyejiadao1993/aspnetcoreJenkinsDemo.git']]])
 	}
 	stage('Build'){ 
 	
